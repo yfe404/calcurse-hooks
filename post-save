@@ -1,5 +1,9 @@
 #!/bin/bash
 
 # This script is executed after the data files are saved.
-## push data to git
+## push data to git.
+echo "Syncing..."
+git -C $CALCURSE_DATA_DIR add todo apts notes >> $CALCURSE_DATA_DIR/hooks/post-save-hook.log 2>&1
+git -C $CALCURSE_DATA_DIR commit -m "syncing" >> $CALCURSE_DATA_DIR/hooks/post-save-hook.log 2>&1
+git -C $CALCURSE_DATA_DIR push >> $CALCURSE_DATA_DIR/hooks/post-save-hook.log 2>&1
 
