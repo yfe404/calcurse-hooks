@@ -2,4 +2,5 @@
 
 # This script is executed before the data files are loaded.
 ## pull data from git
-
+echo "Syncing..."
+git -C $CALCURSE_DATA_DIR pull >> $CALCURSE_DATA_DIR/hooks/pre-load-hook.log 2>&1
